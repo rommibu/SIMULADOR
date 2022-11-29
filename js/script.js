@@ -1,4 +1,4 @@
-function Producto (articulo, marca, modelo, precio, cantidad, id) {
+function Produc (articulo, marca, modelo, precio, cantidad, id) {
         this.articulo = articulo;
         this.marca = marca;
         this.modelo = parseInt(modelo);
@@ -6,7 +6,22 @@ function Producto (articulo, marca, modelo, precio, cantidad, id) {
         this.cantidad = parseInt(cantidad);
         this.id = id;
 
-        let ingreso = prompt(parseInt(`Por favor ingrese la opcion deseada:
+        this.descripcion = function () {
+            alert("Hola, el producto " + this.articulo + " es marca " + this.marca + " modelo " + this.modelo + " cuesta " + this.precio + " hay en cantidad " + this.cantidad + " y se identifica con el codigo " + this.id)
+        }
+}
+        
+
+const producto1=new Producto('Auriculares', 'Mixor', 550, 1010.00,  32, 1);
+
+        let articuloUser = prompt("Ingrese el articulo").toUpperCase();
+        let marcaUser = prompt("Ingrese la marca del articulo").toUpperCase();
+        let modeloUser = prompt("Ingrese el modelo del articulo").toUpperCase();
+        let precioUser = prompt("Ingrese el precio del articulo");
+        let cantidadUser = prompt("Ingrese la cantidad del articulo");
+        let idUser = prompt("Ingrese el ID del articulo");
+
+let ingreso = prompt(parseInt(`Por favor ingrese la opcion deseada:
         1- Ingresar nuevo producto
         2- Editar producto
         3- Visualizar productos disponibles
@@ -24,9 +39,9 @@ function Producto (articulo, marca, modelo, precio, cantidad, id) {
                 break
             default:
                 alert("Tu eleccion se realizo correctamente!")
-        }
+}
 
-    }
+    
 
 
 
@@ -94,3 +109,4 @@ while (continuar) {
     }
 }
 Producto ()*/
+
