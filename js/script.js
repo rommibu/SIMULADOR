@@ -8,15 +8,30 @@ function Produc (info) {
 
         this.describir = function () {alert("Hola, el producto " + this.articulo + " es marca " + this.marca + " modelo " + this.modelo + " cuesta " + this.precio + " hay en cantidad " + this.cantidad + " y se identifica con el codigo " + this.id)}
 
-    const Producto1=new Produc('Auriculares', 'Mixor', 550, 1010.00,  32, 1);
-    const Producto2=new Produc('Manos Libres', 'Mixor', 10, 1280.00, 25, 2);
-    const Producto3=new Produc('Cable de Carga', 'Samsung', 234, 520.50, 45, 3);
-    const Producto4=new Produc('Cable de Carga y datos', 'Philips', 030, 8, 52, 4);
-    const Producto5=new Produc('Auriculres Gamer', 'Mixor', 76, 890.50, 15, 5);
-    const Producto6=new Produc('Auricular Gamer', 'Pultec', 1306, 2690, 9, 6);
-    const Producto7=new Produc('Bulbo led', 'Mixor', 1937, 510.00, 13, 7);
+    const Productos = [
+        {id:1, articulo:'Auriculares', marca:'Mixor', modelo:550, precio: 1010.00,  cantidad:32},
+        {id:2, articulo:'Manos Libres', marca:'Mixor', modelo:10, precio:1280.00, cantidad:25},
+        {id:3, articulo:'Cable de Carga', marca:'Samsung', modelo:234, precio:520.50, cantidad:45},
+        {id:4, articulo:'Cable de Carga y datos', marca:'Philips', modelo:030, precio:8, cantidad:52},
+        {id:5, articulo:'Auriculres Gamer', marca:'Mixor', modelo:76, precio:890.50, cantidad:15},
+        {id:6, Auricular:'Gamer', marca:'Pultec', modelo:1306, precio:2690, cantidad:9},
+        {id:7, articulo:'Bulbo led', marca:'Mixor', modelo:1937, precio:510.00, cantidad:13},
+    ];
 
-}       
+    const buscar = (articulo) => {
+        let producto = Productos.find(item => item.articulo === articulo);
+        
+        if(producto){
+            let mensaje = 'articulo: ${producto.articulo}'; 
+            alert(mensaje);
+        }else{
+            alert("Producto no encontrado")
+        }
+        }
+    };
+
+    let articulo = prompt("Ingrese el articulo a buscar:");
+    buscar(articulo);
 
 let ingreso = parseInt(prompt(`Por favor ingrese la opcion deseada:
         1- Ingresar nuevo producto
