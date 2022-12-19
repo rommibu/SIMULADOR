@@ -7,7 +7,7 @@ function Produc (info) {
         this.id = info.id;
 
         this.describir = function () {alert("Hola, el producto " + this.articulo + " es marca " + this.marca + " modelo " + this.modelo + " cuesta " + this.precio + " hay en cantidad " + this.cantidad + " y se identifica con el codigo " + this.id)}
-
+};
     const Productos = [
         {id:1, articulo:'Auriculares', marca:'Mixor', modelo:550, precio: 1010.00,  cantidad:32},
         {id:2, articulo:'Manos Libres', marca:'Mixor', modelo:10, precio:1280.00, cantidad:25},
@@ -22,16 +22,29 @@ function Produc (info) {
         let producto = Productos.find(item => item.articulo === articulo);
         
         if(producto){
-            let mensaje = 'articulo: ${producto.articulo}'; 
+            let mensaje = `articulo: ${producto.articulo}`; 
             alert(mensaje);
         }else{
             alert("Producto no encontrado")
         }
-        }
-    };
+    }
+    
 
     let articulo = prompt("Ingrese el articulo a buscar:");
     buscar(articulo);
+
+
+    /*const nuevoingreso= (articulo)=>{
+        let producto = Productos.find(item => item.articulo != articulo);
+    
+        if(nuevoingreso === articulo){
+            producto = 'Producto ya ingresado, desea editarlo?'
+        }else if (nuevoingreso =! articulo){
+            producto = 'articulo no ingresado, ingreselo por favor'
+        }else{
+            producto = 'Ingrese nuevamente la accion a realizar'
+        }
+    }*/
 
 let ingreso = parseInt(prompt(`Por favor ingrese la opcion deseada:
         1- Ingresar nuevo producto
@@ -39,27 +52,22 @@ let ingreso = parseInt(prompt(`Por favor ingrese la opcion deseada:
         3- Visualizar productos disponibles
         4- salir`));
         
-let articuloUser = prompt("Ingrese el articulo").toUpperCase();
-let marcaUser = prompt("Ingrese la marca del articulo").toUpperCase();
-let modeloUser = prompt("Ingrese el modelo del articulo").toUpperCase();
-let precioUser = prompt("Ingrese el precio del articulo");
-let cantidadUser = prompt("Ingrese la cantidad del articulo");
-let idUser = prompt("Ingrese el ID del articulo");
 
 
-        switch(ingreso){
-            case 1:
-                ingresar_producto();
-                break
-            case 2:
-                editar_producto();
-                break
-            case 3:
-                visualizar_producto();
-                break
-            default:
-                alert("Tu eleccion se realizo correctamente!")
+
+        
                 
-}
 
 
+/*switch(ingreso){
+    case 1:
+        ingresar_producto();
+        break
+    case 2:
+        editar_producto();
+        break
+    case 3:
+        visualizar_producto();
+        break
+    default:
+        alert("Tu eleccion se realizo correctamente!")}*/
