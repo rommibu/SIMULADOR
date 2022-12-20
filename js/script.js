@@ -1,4 +1,100 @@
-function Produc (info) {
+function myFunction() {
+    let ingreso = parseInt(prompt(`Por favor ingrese la opcion deseada:
+            1- Ingresar nuevo producto
+            2- Editar producto
+            3- Visualizar productos disponibles
+            4- Buscar articulo
+            5- salir`));
+            
+    switch(ingreso){
+        case 1:
+            ingresar_producto();
+            break
+        case 2:
+            editar_producto();
+            break
+        case 3:
+            visualizar_productos();
+            break
+        case 4:
+            buscar_producto();
+            break
+        default: 
+            alert("adios");
+    }
+}
+    var Productos = [];
+    
+    function ingresar_producto() {
+        var codigo = prompt("Ingrese el codigo del articulo:");
+        var articulo = prompt("Ingrese el nombre del articulo:");
+        var marca = prompt("Ingrese la marca del articulo:");
+        var modelo = prompt("Ingrese el modelo del articulo:");
+        var precio = prompt("Ingrese el precio del articulo:");
+        var cantidad = prompt("Ingrese el stock del articulo:");
+
+        var prod = new Object();
+        prod.codigo = codigo;
+        prod.articulo = articulo;
+        prod.marca = marca;
+        prod.modelo = modelo;
+        prod.precio = precio;
+        prod.cantidad = cantidad;
+        Productos.push(prod);
+        alert("Hola, el producto " + prod.articulo + " es marca " + prod.marca + " modelo " + prod.modelo + " cuesta " + prod.precio);
+    }
+    
+    function buscar_producto(){
+        let codigo = prompt("Ingrese el codigo a buscar:");
+        var prod = buscar_por_codigo(codigo);
+        alert(JSON.stringify(prod));
+    }
+    
+    function buscar_por_codigo(code){
+            var prod = Productos.find(item => item.codigo === code);
+            if(prod){
+                return prod;
+            }
+            else{
+                return "producto no encontrado";
+            }
+    }
+    
+    function visualizar_productos(){
+        alert(JSON.stringify(Productos));
+    }
+    
+    function editar_producto(){
+        var codigo = prompt("Ingrese el codigo del articulo a editar:");
+        var edit = buscar_por_codigo(codigo);
+        if(edit){
+            var articulo = prompt("Ingresa el nuevo nombre de articulo:");
+            var marca = prompt("Ingrese la nueva marca del articulo:");
+            var modelo = prompt("Ingrese el nuevo modelo del articulo:");
+            var precio = prompt("Ingrese el nuevo precio del articulo:");
+            var cantidad = prompt("Ingrese el nuevo stock del articulo:");
+            producto.articulo = articulo;
+            producto.marca = marca;
+            producto.modelo = modelo;
+            producto.precio = precio;
+            producto.cantidad = cantidad;
+        }
+        else{
+            alert("el producto no existe");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+/*function Produc (info) {
         this.articulo = articulo;
         this.marca = info.marca;
         this.modelo = parseInt(info.modelo);
@@ -46,11 +142,11 @@ function Produc (info) {
         }
     }*/
 
-let ingreso = parseInt(prompt(`Por favor ingrese la opcion deseada:
+/*let ingreso = parseInt(prompt(`Por favor ingrese la opcion deseada:
         1- Ingresar nuevo producto
         2- Editar producto
         3- Visualizar productos disponibles
-        4- salir`));
+        4- salir`)); 
         
 
 
@@ -71,3 +167,7 @@ let ingreso = parseInt(prompt(`Por favor ingrese la opcion deseada:
         break
     default:
         alert("Tu eleccion se realizo correctamente!")}*/
+
+
+    
+            
