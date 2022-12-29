@@ -7,3 +7,13 @@ h1{
     text-transform: uppercase;
     display: inline-block;
 }
+
+.contenedor form{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.contenedor form input{
+    margin: 5px;
+}
